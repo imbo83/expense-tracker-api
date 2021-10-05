@@ -9,9 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
-from pathlib import Path
 import sys
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "2gg$%!=&yp$v5=ug9wjb0$^t)x#knfvdym(j!_ap#49nt^(9p8"
+SECRET_KEY = "@7)$bk=-7#vybh%3l7%3pdlp00w$0t!qil#036&$op7)4kx7%j"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "restapi",
     "django_filters",
+    "rest_framework_api_key",
 ]
 
 MIDDLEWARE = [
@@ -119,5 +119,6 @@ REST_FRAMEWORK = {
 }
 
 TESTING = "test" in sys.argv[1:]
+
 if TESTING:
-    PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5Passwordhasher"]
+    PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
